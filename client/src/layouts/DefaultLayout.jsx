@@ -6,6 +6,11 @@ export default function DefaultLayout() {
     const {user, token} = useAppContext()
     if(!token) return <Navigate to="/login" />
 
+    const logout = (e) => {
+        // e.preventDefault()
+        console.log(e)
+    }
+
     return (    
 
         <div className="flex h-screen">
@@ -18,7 +23,10 @@ export default function DefaultLayout() {
             <div className="flex flex-col w-full">
                 <header className="flex items-center justify-between w-full h-16 p-3 border shadow">
                     <span>brand</span>
-                    <span>adevenuto</span>
+                    <div className="flex items-center gap-x-4">
+                        <span className="">{ user.email }</span>
+                        <a className="text-xs text-red-500 cursor-pointer hover:text-red-700" onClick={(e) => logout(e)}>logout</a>
+                    </div>
                 </header>
                 <main className="p-3 overflow-auto">
                     <Outlet />
