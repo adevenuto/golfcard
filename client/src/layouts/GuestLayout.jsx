@@ -4,10 +4,8 @@ import { useAppContext } from '../context/contextProvider'
 
 export default function GuestLayout() {
     const { token } = useAppContext()
-
-    if(token) {
-        return <Navigate to="/" />
-    } 
+    if(token) return <Navigate to="/" />
+    
     return (
         <div>
             <Outlet />
