@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
 import Login from "./pages/Login"
-import Register from "./pages/Register"
+import Register from "./pages/register"
 import Users from "./pages/Users"
 import NotFound from "./pages/NotFound"
 import DefaultLayout from "./layouts/DefaultLayout"
