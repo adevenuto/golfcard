@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AppContext = createContext({
     token: null,
@@ -22,6 +22,11 @@ export const ContextProvider = ({ children }) => {
             localStorage.removeItem('ACCESS_TOKEN')
         }
     }
+
+    useEffect(() => {
+      if(localStorage.ACCESS_TOKEN) _setToken(localStorage.ACCESS_TOKEN)
+    }, [])
+    
     
     return (
         <AppContext.Provider value={{
