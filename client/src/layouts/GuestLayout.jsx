@@ -6,9 +6,5 @@ export default function GuestLayout() {
     const { token } = useAppContext()
     if(token) return <Navigate to="/" />
     
-    return (
-        <div>
-            <Outlet />
-        </div>
-    )
+    return <Outlet />
 }
