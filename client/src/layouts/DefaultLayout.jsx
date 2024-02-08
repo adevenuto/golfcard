@@ -28,10 +28,15 @@ export default function DefaultLayout() {
             </aside>
             <div className="flex flex-col w-full">
                 <header className="flex items-center justify-between w-full h-16 p-3 shadow">
-                    <span>brand</span>
+                    <span>{import.meta.env.VITE_APP_NAME}</span>
                     <div className="flex items-center gap-x-4">
                         <span className="">{ user.email }</span>
-                        <a className="text-xs text-red-500 cursor-pointer hover:text-red-700" onClick={(e) => logout(e)}>logout</a>
+                        <a 
+                          onClick={(e) => logout(e)}
+                          className="text-xs text-red-500 cursor-pointer hover:text-red-700"
+                        >
+                          logout
+                        </a>
                     </div>
                 </header>
                 <main className="p-3 overflow-auto">
