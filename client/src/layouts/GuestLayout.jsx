@@ -1,9 +1,9 @@
 import React from 'react'
 import { Outlet, Navigate } from 'react-router-dom'
-import { useAppContext } from '../context/contextProvider'
+import { useAuthContext } from '../context/AuthProvider'
 
 export default function GuestLayout() {
-    const { token } = useAppContext()
+    const { token } = useAuthContext()
     if(token) return <Navigate to="/" />
     
     return <Outlet />
