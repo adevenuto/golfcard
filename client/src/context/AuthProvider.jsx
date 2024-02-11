@@ -1,13 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const AppContext = createContext({
-    token: null,
-    user: null,
-    setToken: () => {},
-    setUser: () => {}
-})
+const AppContext = createContext()
 
-export const ContextProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({
         name: 'Anthony',
         email: 'anthonydevenuto@gmail.com'
@@ -40,4 +35,4 @@ export const ContextProvider = ({ children }) => {
     )
 }
 
-export const useAppContext = () => useContext(AppContext)
+export const useAuthContext = () => useContext(AppContext)

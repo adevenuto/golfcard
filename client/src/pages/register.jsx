@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 import axiosClient from '../axios-client';
-import { useAppContext } from '../context/contextProvider';
+import { useAuthContext } from '../context/AuthProvider';
 
 export default function Register() {
     const first_name = useRef()
@@ -17,7 +17,7 @@ export default function Register() {
         message:null
     })
 
-    const { setUser, setToken } = useAppContext()
+    const { setUser, setToken } = useAuthContext()
 
     const onSubmit = (e) => {
         e.preventDefault();

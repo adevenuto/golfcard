@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useAppContext } from '../context/contextProvider';
+import { useAuthContext } from '../context/AuthProvider';
 import axiosClient from '../axios-client';
 
 export default function Login() {
@@ -8,7 +8,7 @@ export default function Login() {
     const password = useRef()
     const [errors, setErrors] = useState({email:null, password:null, message:null})
 
-    const { setUser, setToken } = useAppContext()
+    const { setUser, setToken } = useAuthContext()
 
     const onSubmit = (e) => {
         e.preventDefault()

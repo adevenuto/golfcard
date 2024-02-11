@@ -1,7 +1,7 @@
-import React from 'react'
+import { CourseSearch } from "../components/CourseSearch"
 
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <CourseSearch />
   )
 }
