@@ -7,7 +7,7 @@ export default function Dashboard() {
   return (
 
     <div className="flex flex-col sm:flex-row sm:gap-3">
-      <div className="border sm:w-1/2">
+      <div className="sm:w-1/2">
         <div className="flex items-center">
           <MdOutlineFavoriteBorder className="w-6 h-6 text-red-500"/> 
           <span className="self-start text-xl">Favorites</span>
