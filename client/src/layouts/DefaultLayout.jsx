@@ -20,11 +20,11 @@ export default function DefaultLayout() {
     return (    
 
         <div className="flex h-screen">
-            <aside className="p-3 transition ease-in bg-indigo-600 duration-5000 delay-3000 w-52 -left-52 sm:left-0">
+            {/* <aside className="p-3 transition ease-in bg-indigo-600 duration-5000 delay-3000 w-52 -left-52 sm:left-0">
                 <div className="flex flex-col gap-3">
                     <Link className="block p-2 text-white bg-indigo-800 rounded" to="/dashboard">Dashboard</Link>
                 </div>
-            </aside>
+            </aside> */}
             <div className="flex flex-col w-full">
                 <header className="flex items-center justify-between w-full h-16 p-3 shadow">
                     <span>{import.meta.env.VITE_APP_NAME}</span>
@@ -38,7 +38,7 @@ export default function DefaultLayout() {
                         </a>
                     </div>
                 </header>
-                <main className="p-3 overflow-auto">
+                <main className="flex-1 w-full p-3 mx-auto overflow-auto md:max-w-7xl">
                     <Outlet />
                 </main>
             </div>

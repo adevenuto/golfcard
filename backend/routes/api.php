@@ -23,6 +23,10 @@ Route::middleware('auth:sanctum')->group( function () {
 });
 
 
+// Route::post('/update-holes', [CourseController::class, 'updateHolesStructure']);
+
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+
+

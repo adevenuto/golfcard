@@ -13,7 +13,6 @@ class AuthController extends Controller
 {
     public function register(RegisterRequest $request) 
     {   
-        \Log::info($request);
         $data = $request->validated();
 
         /**  @var \App\Models\User $user */
