@@ -1,23 +1,27 @@
 import { CourseSearch } from "../components/CourseSearch"
-import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { MdBookmark} from "react-icons/md";
 import { useAppContext } from "../context/AppProvider";
 
 export default function Dashboard() {
-  const { favoriteCourses } = useAppContext();
+  const { appData } = useAppContext();
+  console.log(appData)
   return (
 
     <div className="flex flex-col sm:flex-row sm:gap-3">
       <div className="sm:w-1/2">
         <div className="flex items-center">
-          <MdOutlineFavoriteBorder className="w-6 h-6 text-red-500"/> 
-          <span className="self-start text-xl">Favorites</span>
+          <MdBookmark className="text-green-900 w-7 h-7"/> 
+          <span className="self-start text-2xl font-bold">Favorites</span>
         </div>
-        {favoriteCourses.length>0 && favoriteCourses.map(course => (
-          <p>{course.name}</p>
+        {appData.favoriteCourses.length>0 && appData.favoriteCourses.map(course => (
+          <p>Course</p>
         ))}
       </div>
       <div className="sm:w-1/2">
-        <CourseSearch />
+        <div className="my-4 sm:m-0">
+          <CourseSearch />
+          {appData?.selectedCourse?.name}
+        </div>
       </div>
     </div>
     

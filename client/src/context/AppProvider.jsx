@@ -1,22 +1,31 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const AppContext = createContext()
+const AppContext = createContext();
+
+const initialData = {
+    favoriteCourses: [],
+    selectedCourse: {},
+}
 
 export const AppProvider = ({ children }) => {
-    const [favoriteCourses, setFavoriteCourses] = useState([])
+    const [appData, setAppData] = useState(initialData);
 
-    // useEffect(() => {
-    //   if(localStorage.ACCESS_TOKEN) _setToken(localStorage.ACCESS_TOKEN)
-    // }, [])
-    
+    function setSelectedCourse(course) {
+        setAppData(prev => ({
+            ...prev,
+            selectedCourse: course
+            })
+        );
+    }
     
     return (
         <AppContext.Provider value={{
-          favoriteCourses
+          appData,
+          setSelectedCourse
         }} >
             { children }
         </AppContext.Provider>
     )
 }
 
-export const useAppContext = () => useContext(AppContext)
+export const useAppContext = () => useContext(AppContext);
