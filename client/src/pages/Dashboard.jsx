@@ -20,7 +20,15 @@ export default function Dashboard() {
       <div className="sm:w-1/2">
         <div className="my-4 sm:m-0">
           <CourseSearch />
-          {appData?.selectedCourse?.name}
+
+          {appData?.selectedCourse && 
+          
+          <div className="p-3 my-10 border-2 border-green-900 rounded">
+              {appData.selectedCourse.layout_data.teeboxes.map(teebox => (
+                <div className="">{teebox.name}</div>
+              ))}
+          </div>}
+          
         </div>
       </div>
     </div>

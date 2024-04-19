@@ -45,7 +45,7 @@ export const CourseSearch = () => {
         <div className="relative">
           <Combobox.Input 
             placeholder='Search for a course'
-            className={cn("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5")}
+            className={cn("bg-gray-50 border border-gray-300 text-gray-900 rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-3")}
             onChange={queryCourseHandler} 
           />
           {courses.length>0 && 

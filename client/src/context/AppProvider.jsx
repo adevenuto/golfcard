@@ -4,13 +4,16 @@ const AppContext = createContext();
 
 const initialData = {
     favoriteCourses: [],
-    selectedCourse: {},
+    selectedCourse: null,
 }
 
 export const AppProvider = ({ children }) => {
     const [appData, setAppData] = useState(initialData);
 
-    function setSelectedCourse(course) {
+    function setSelectedCourse(course = null) {
+        if(!course) {
+            return setAppData(null);
+        }
         setAppData(prev => ({
             ...prev,
             selectedCourse: course
